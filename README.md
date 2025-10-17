@@ -1,13 +1,13 @@
 # PLZA Web Save Recovery Tool
-<sub>This project is not associated with TPC (The Pokémon Company), GameFreak, Nintendo nor any other entity.</sub>
+<sub>This project is not associated with TPC (The PokÃ©mon Company), GameFreak, Nintendo nor any other entity.</sub>
 
 ---
 
 ## What's this?
-This is a tool you can use to repair corrupted save files for Pokémon Legends Z-A written in Python and put on the Web!.
-
+This is a tool you can use to repair corrupted save files for PokÃ©mon Legends Z-A written in Python and put on the Web!.
 
 ## How to use
+The site is hosted on [https://pl.azalea.sh/](https://pl.azalea.sh/)!!
 
 1. Dump your save file using JKSV or similar
 2. Copy your save file to your PC
