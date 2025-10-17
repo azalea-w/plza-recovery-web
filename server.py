@@ -3,6 +3,7 @@ import json
 import os
 import subprocess
 from pathlib import Path
+from shutil import copy
 import sys
 import tempfile
 from uuid import uuid4
@@ -85,7 +86,8 @@ async def repair_save(file: UploadFile = File(...)):
 
         save_id = str(uuid4())
         file_map[save_id] = temp_input_path + "_modified"
-
+        if not Path(file_map[save_id]).exists():
+            copy(temp_input_path, file_map[save_id])
         return {
             "success": True,
             "download_url": f"/download/{save_id}",

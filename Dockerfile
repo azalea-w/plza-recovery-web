@@ -15,8 +15,6 @@ WORKDIR /app
 
 COPY --from=build . .
 
-RUN ls -la
-
 RUN pip install -r app/requirements.txt
 
 EXPOSE 8000
