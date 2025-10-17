@@ -1,0 +1,19 @@
+{
+  "name": "plza-recovery-web",
+  "version": "0.1.0",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "npm run clean && parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /dist",
+    "clean": "rm -rf dist .parcel-cache"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.0",
+    "@parcel/transformer-typescript-tsc": "^2.16.0",
+    "parcel": "^2.10.3",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLZA Recovery Tool</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+</head>
+<body class="vh-100 bg-dark" data-bs-theme="dark">
+    <div id="app" class="container-fluid app-container">
+        <div id="layout" class="vstack vh-100">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-1 sticky-top" id="navbar">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">PLZA Recovery Tool</a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/azalea-w/plza-recovery-web">GitHub Repository</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Changelog</a>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link btn btn-link" id="theme-switcher" type="button">
+                                    <i class="theme-icon"></i> Switch Theme
+                                </button>
+                            </li>
+                        </ul> 
+                    </div>
+                </div>
+            </nav>
+            <div class="container-fluid mt-2 h-100 vstack justify-content-center align-items-center">
+                <div id="drop-zone" class="d-flex vstack justify-content-center align-items-center">
+                    <p>Drag & drop your PLZA save file here</p>
+                    <p class="small">or click to select a file</p>
+                    <input type="file" id="file-input">
+                    <div id="result" class="mt-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="fixed-bottom text-center container-fluid">
+            <a href="https://github.com/azalea-w">
+                Created by azalea :3
+            </a>
+        </div>
+    </div>
+
+    <script type="module" src="./app.ts"></script>
+</body>
+</html>

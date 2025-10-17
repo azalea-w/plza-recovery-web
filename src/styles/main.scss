@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+$sizes: 75, 80, 85, 90;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    max-width: 100%;
+}
+
+
+@each $i in $sizes {
+    .vh-#{$i} {
+        height: #{$i}vh !important;
+    }
+}
+
+@each $i in $sizes {
+    .w-#{$i} {
+        width: #{$i}vw !important;
+    }
+}
+
+#drop-zone {
+    flex: inherit;
+}
