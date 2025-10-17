@@ -1,4 +1,4 @@
-FROM node:18-alpine as build
+FROM node:18-alpine AS build
 
 WORKDIR /app
 
@@ -9,10 +9,16 @@ COPY . .
 
 RUN npm run build
 
-FROM python:3.13.9-slim-bookwork
+FROM python:3.13.9-slim-bookworm
 
-RUN pip install -r requirements.txt
+WORKDIR /app
+
+COPY --from=build . .
+
+RUN ls -la
+
+RUN pip install -r app/requirements.txt
 
 EXPOSE 8000
 
-CMD ["python", "server.py"]
+CMD ["python", "app/server.py"]

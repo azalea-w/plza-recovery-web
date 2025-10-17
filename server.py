@@ -39,7 +39,7 @@ app.add_middleware(
 thread_pool = ThreadPoolExecutor(max_workers=10)
 
 # Serve static files
-app.mount("/dist", StaticFiles(directory="dist"), name="dist")
+app.mount("/dist", StaticFiles(directory=src_dir / "dist"), name="dist")
 
 
 # noinspection PyTypeChecker
