@@ -3,6 +3,8 @@
 
 ---
 
+[![Docker Image CI](https://github.com/azalea-w/plza-recovery-web/actions/workflows/docker-image.yml/badge.svg)](https://github.com/azalea-w/plza-recovery-web/actions/workflows/docker-image.yml)
+
 ## What's this?
 This is a tool you can use to repair corrupted save files for Pokémon Legends Z-A written in Python and put on the Web!.
 
