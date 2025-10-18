@@ -51,7 +51,7 @@ async def run_repair_process(temp_input_path: str) -> dict:
         proc = subprocess.Popen([
             "python",
             f"{src_dir / 'plza-recovery' / 'main.py'}",
-            temp_input_path, 'json_out'],
+            temp_input_path, '--json-output'],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
         )
