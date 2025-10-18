@@ -27,7 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - name: Commit changes
         run: |
-          git add lib
+          git add plza-recovery
           git commit -m "Update submodule to latest commit"
           git push origin main
         env:
