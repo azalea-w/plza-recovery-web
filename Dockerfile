@@ -1,22 +1,28 @@
-FROM node:18-alpine AS build
+FROM node:18-alpine AS frontend-build
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm i
+RUN npm ci
 
 COPY . .
-
 RUN npm run build
 
-FROM python:3.13.9-slim-bookworm
+FROM python:3.13-slim-bookworm
 
 WORKDIR /app
 
-COPY --from=build . .
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN pip install -r app/requirements.txt
+COPY --from=frontend-build /app/dist ./dist
+COPY --from=frontend-build /app/plza-recovery ./plza-recovery
+COPY requirements.txt .
+COPY server.py .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
 
 EXPOSE 8000
 
-CMD ["python", "app/server.py"]
+CMD ["python", "server.py"]
